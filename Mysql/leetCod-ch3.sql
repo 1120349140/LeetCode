@@ -59,4 +59,23 @@ where
 	temp.CNT>=3;
 	
 	
-添加一条测试语句
+﻿ -- 184.部门工资最高的员工
+select 
+	D.Name Department,E.Name Employee,E.Salary
+from
+	Employee E
+inner join
+	Department D
+on
+	E.DepartmentId=D.Id
+where(
+	DepartmentId,Salary
+)in
+(select 
+	DepartmentId,max(Salary)
+from
+	Employee
+group by
+	DepartmentId
+		
+    );
